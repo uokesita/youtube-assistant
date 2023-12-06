@@ -13,7 +13,10 @@ embeddings = OpenAIEmbeddings()
 
 
 def create_db_from_youtube_video_url(video_url: str) -> FAISS:
-    loader = YoutubeLoader.from_youtube_url(video_url)
+    loader = YoutubeLoader.from_youtube_url(video_url,
+      language=["en", "es", "English", "Spanish (auto-generated)"],
+      translation="en",
+    )
     transcript = loader.load()
 
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
