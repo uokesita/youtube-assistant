@@ -8,11 +8,11 @@ with st.sidebar:
     with st.form(key='my_form'):
         youtube_url = st.sidebar.text_area(
             label="What is the YouTube video URL?",
-            max_chars=50
+            max_chars=90
             )
         query = st.sidebar.text_area(
             label="Ask me about the video?",
-            max_chars=50,
+            max_chars=90,
             key="query"
             )
         openai_api_key = st.sidebar.text_input(
