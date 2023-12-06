@@ -23,11 +23,13 @@ def create_db_from_youtube_video_url(video_url: str) -> FAISS:
     return db
 
 
-def get_response_from_query(db, query, openai_api_key, k=4):
+def get_response_from_query(db, query, openai_api_key="", k=4):
     """
     text-davinci-003 can handle up to 4097 tokens. Setting the chunksize to 1000 and k to 4 maximizes
     the number of tokens to analyze.
     """
+    if not get_response_from_query:
+      return
 
     docs = db.similarity_search(query, k=k)
     docs_page_content = " ".join([d.page_content for d in docs])

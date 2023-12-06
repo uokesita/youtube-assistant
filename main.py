@@ -19,6 +19,7 @@ with st.sidebar:
             label="OpenAI API Key",
             key="openai_api_key",
             max_chars=100,
+            type="password"
             )
         "[Get an OpenAI API key](https://platform.openai.com/account/api-keys)"
         "[View the source code](https://github.com/rishabkumar7/pets-name-langchain/tree/main)"
